@@ -22,14 +22,14 @@ IParrot.prototype.resetcache = function() {
 
 IParrot.prototype.text = function(t, lang) {
     var self = this;
-    if(!t) return;
+    if(!t) return t;
 
     lang = lang || self.options.languages && self.options.languages.length && self.options.languages[0];
     if(typeof(t) == "object")
         return t[lang] || t[t.first()];
 
     var dic = self.dictionary(lang);
-    return dic[t] || t;
+    return dic && dic[t] || t;
 }
 
 IParrot.prototype.dictionary = function(lang) {
