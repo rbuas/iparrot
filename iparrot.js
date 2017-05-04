@@ -17,6 +17,7 @@ IParrot.DEFAULTOPTIONS = {
 };
 
 IParrot.prototype.resetcache = function() {
+    var self = this;
     self.cache = {};
 }
 
