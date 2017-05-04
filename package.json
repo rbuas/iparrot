@@ -16,7 +16,7 @@
     "url": "http://github.com/rbuas/iparrot.git"
   },
   "dependencies": {
-    "jsext": "^1.0.0"
+    "jsext": "*"
   },
   "devDependencies": {
     "express": "^4.13.4",
