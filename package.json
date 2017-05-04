@@ -1,0 +1,34 @@
+{
+  "name": "iparrot",
+  "version": "0.0.1",
+  "description": "A lightweight internationalization module.",
+  "author": "rbuas <rodrigobuas@gmail.com>",
+  "keywords": [
+    "internationalization",
+    "translate",
+    "resource",
+    "multilang"
+  ],
+  "license": "MIT",
+  "main": "./iparrot",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/rbuas/iparrot.git"
+  },
+  "dependencies": {
+    "jsext": "^1.0.0"
+  },
+  "devDependencies": {
+    "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.13.0",
+    "chai": "^3.5.0",
+    "mocha": "^2.4",
+    "moment": "^2.18.1",
+    "yargs": "^4.8.0"
+  },
+  "scripts": {
+    "unittest": "mocha *.unittest.js",
+    "resttest": "mocha *.resttest.js"
+  }
+}
