@@ -2,7 +2,7 @@ module.exports = IParrot;
 
 var fs = require("fs");
 var path = require("path");
-var jsext = require("jsext");
+var jsext = require("../jsext");
 
 function IParrot (options) {
     var self = this;
@@ -26,11 +26,8 @@ IParrot.prototype.text = function(t, lang) {
     if(!t) return t;
 
     lang = lang || self.options.languages && self.options.languages.length && self.options.languages[0];
-    if(typeof(t) == "object")
-        return t[lang] || t[t.first()];
-
     var dic = self.dictionary(lang);
-    return dic && dic[t] || t;
+    return IParrot.translate(t, lang, self.options.languages, dic);
 }
 
 IParrot.prototype.dictionary = function(lang) {
@@ -48,4 +45,18 @@ IParrot.prototype.dictionary = function(lang) {
     var dic = jsext.loadJsonFile(ifile) || {};
     self.cache[lang] = dic;
     return self.cache[lang];
+}
+
+
+
+// STATIC
+
+IParrot.translate = function(t, lang, languages, dic) {
+    if(!t) return t;
+
+    lang = lang || languages && languages.length && languages[0];
+    if(typeof(t) == "object")
+        return t[lang] || t.first();
+
+    return dic && dic[t] || t;
 }
