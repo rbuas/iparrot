@@ -2,7 +2,7 @@ module.exports = IParrot;
 
 var fs = require("fs");
 var path = require("path");
-var jsext = require("../jsext");
+var jsext = require("jsext");
 
 function IParrot (options) {
     var self = this;
