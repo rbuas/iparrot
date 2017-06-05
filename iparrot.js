@@ -55,6 +55,7 @@ IParrot.translate = function(t, lang, languages, dic) {
     if(!t) return t;
 
     lang = lang || languages && languages.length && languages[0];
+    lang = lang && lang.toUpperCase();
     if(typeof(t) == "object")
         return t[lang] || t.first();
 
